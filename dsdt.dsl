@@ -18,7 +18,7 @@
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20120913 (538052883)
  */
-DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x01072009)
+DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x0107200a)
 {
     /*
      * iASL Warning: There were 21 external control methods found during

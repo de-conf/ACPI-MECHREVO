@@ -18,7 +18,7 @@
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20120913 (538052883)
  */
-DefinitionBlock ("", "SSDT", 1, "SataRe", "SataTabl", 0x00001000)
+DefinitionBlock ("", "SSDT", 1, "SataRe", "SataTabl", 0x00001001)
 {
     External (_SB_.PCI0.SAT0, DeviceObj)
     External (DSSP, IntObj)
