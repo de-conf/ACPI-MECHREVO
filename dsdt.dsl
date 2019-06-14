@@ -93,7 +93,7 @@ DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x01072009)
     External (M32L, FieldUnitObj)
     External (M64B, FieldUnitObj)
     External (M64L, FieldUnitObj)
-    External (MDBG, IntObj)
+    External (MDBG, MethodObj)
     External (P0WK, FieldUnitObj)
     External (P1GP, FieldUnitObj)
     External (P1WK, FieldUnitObj)
@@ -110,7 +110,7 @@ DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x01072009)
     External (PS0X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (PS2X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (SDSM, IntObj)
+    External (SDSM, MethodObj)
     External (SGGP, FieldUnitObj)
     External (SGMD, FieldUnitObj)
 
@@ -13691,11 +13691,7 @@ DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x01072009)
 
                 If (CondRefOf (\_SB.PCI0.SAT0.SDSM))
                 {
-                    Return (SDSM) /* External reference */
-                    Arg0
-                    Arg1
-                    Arg2
-                    Arg3
+                    Return (SDSM (Arg0, Arg1, Arg2, Arg3)) /* External reference */
                 }
 
                 Return (Zero)
@@ -17084,8 +17080,7 @@ DefinitionBlock ("", "DSDT", 2, "THTFPC", "TONGFANG", 0x01072009)
     {
         If (CondRefOf (MDBG))
         {
-            Return (MDBG) /* External reference */
-            Arg0
+            Return (MDBG (Arg0)) /* External reference */
         }
 
         Return (Zero)
