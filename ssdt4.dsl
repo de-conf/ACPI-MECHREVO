@@ -3979,8 +3979,8 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003001)
             }
 
             GPPR (PION, One)
-            If ((OSYS == 0x07D9))
-            {
+            /*If ((OSYS == 0x07D9))
+            {*/
                 If ((PION == Zero))
                 {
                     P0AP = Zero
@@ -4061,11 +4061,11 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003001)
                         TCNT += 0x10
                     }
                 }
-            }
+            /*}
             Else
             {
                 LKEN (PION)
-            }
+            }*/
 
             While ((\_SB.PCI0.PEG0.LNKS < 0x07))
             {
@@ -4176,8 +4176,8 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003001)
                 ECP2 = LCP2 /* \_SB_.PCI0.LCP2 */
             }
 
-            If ((OSYS == 0x07D9))
-            {
+            /*If ((OSYS == 0x07D9))
+            {*/
                 If ((PIOF == Zero))
                 {
                     P0LD = One
@@ -4241,11 +4241,11 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003001)
                         PDUB (PIOF, MBDL)
                     }
                 }
-            }
+            /*}
             Else
             {
                 LKDS (PIOF)
-            }
+            }*/
 
             If ((DerefOf (SCLK [Zero]) != Zero))
             {
