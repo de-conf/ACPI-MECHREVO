@@ -857,18 +857,6 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001001)
             Release (GC6M)
         }
 
-        Method (_Q60, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
-        {
-            P8XH (Zero, 0x60)
-            Debug = "------- GC6I-SCI _Q event --------"
-            \_SB.PCI0.SGPO (HRE0, HRG0, HRA0, Zero, \_SB.PCI0.SGPO (PWE0, PWG0, PWA0, Zero))
-        }
-
-        Method (_Q61, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
-        {
-            P8XH (Zero, 0x61)
-            Debug = "------- GC6O-SCI _Q event --------"
-        }
     }
 
     Scope (\_SB.PCI0.PEG0.PEGP)
